@@ -72,8 +72,9 @@ const style= StyleSheet.create({
   }
 });
 
-export default function App() {
-  return <View style={style.container}>
+function Barcode({navigation}) {
+  return(
+  <View style={style.container}>
       <Text style={style.title}>Batzai</Text>
       <Text style={style.description}>Faca scan do barcoder do producto</Text>
       <View style={style.barcodeContainer}>
@@ -81,11 +82,13 @@ export default function App() {
           <Text style={style.barcodeText}>Escanear</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={style.correctButton}>
+      <TouchableOpacity style={style.correctButton} onPress= {() =>
+            navigation.navigate('Quanty') }>
         <Text style={style.correctText}>Correcto</Text>
       </TouchableOpacity>
       <TouchableOpacity style={style.tenteButton}>
         <Text style={style.tenteText}>Tente uotra vez</Text>
       </TouchableOpacity>
   </View>
-}
+  )}
+export default Barcode;

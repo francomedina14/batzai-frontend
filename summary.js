@@ -24,30 +24,21 @@ const style= StyleSheet.create({
     color: 'black',
     marginTop: 20,
   },
-  quantyContainer: {
+  table: {
     flexDirection: 'row',
-    borderWidth: 1,
-    padding: 10,
+    textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    width: Dimensions.get('screen').width * 0.4,
+    padding: 20,
     marginTop: 15,
+    backgroundColor: 'gray',
+    borderBottomWidth: 3,
   },
-  quantyInput: {
-    width: Dimensions.get('screen').width * 0.1,
-    textAlign: 'center',
-    borderColor: 'gray',
-  },
-  quantyText: {
-    fontSize: 30,
-  },
-  priceInput:{
-    width: Dimensions.get('screen').width * 0.4,
-    borderWidth: 1,
-    padding: 15,
-    textAlign: 'center',
-    borderColor: 'gray',
-    marginTop: 15,
+  tableTitle: {
+    fontSize: 13,
+    width: '20%',
+    margin: 5,
+    fontWeight: 'bold'
   },
   totalPrice: {
     fontSize: 20,
@@ -55,21 +46,22 @@ const style= StyleSheet.create({
     borderRadius: 25,
     padding: 15,
     marginTop: 100,
+    marginBottom: 70,
   },
-  saveButton: {
+  okButton: {
     backgroundColor: 'gray',
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
     padding: 10,
-    marginTop: 100,
+    marginTop: 70,
   },
-  saveText: {
+  okText: {
     color: 'white',
     fontSize: 20,
   },
-  saleButton: {
+  addButton: {
     backgroundColor: 'white',
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
@@ -80,35 +72,35 @@ const style= StyleSheet.create({
     padding: 10,
     marginTop: 10,
   },
-  saleText: {
+  addText: {
     color: 'gray',
     fontSize: 20,
   }
 });
 
-export default function App() {
-  return <View style={style.container}>
+function summary({navigation})  {
+  return(
+     <View style={style.container}>
       <View style={style.centerContainer}>
         <Text style={style.title}>Batzai</Text>
-        <Text style={style.description}>Quantidade</Text>
-        <View style={style.quantyContainer}>
-        <TouchableOpacity style={style.quantyButton}>
-        <Text style={style.quantyText}>-</Text>
-        </TouchableOpacity>
-        <TextInput style={style.quantyInput}></TextInput>
-        <TouchableOpacity style={style.quantyButton}>
-        <Text style={style.quantyText}>+</Text>
-        </TouchableOpacity>
+        <Text style={style.description}>Resume da venta</Text>
+        <View style={style.table}>
+          <Text style={style.tableTitle}>Decricao</Text>
+          <Text style={style.tableTitle}>Quanty</Text>
+          <Text style={style.tableTitle}>Preco</Text>
+          <Text style={style.tableTitle}>Total</Text>
         </View>
-        <Text style={style.description}>Preco de venda unitario</Text>
         <TextInput style={style.priceInput}></TextInput>
         <Text style={style.totalPrice}>Preco total: $</Text>
-        <TouchableOpacity style={style.saveButton}>
-        <Text style={style.saveText}>Guardar e continuar</Text>
+        <Text style={style.description}>¿Esta certo?</Text>
+        <TouchableOpacity style={style.okButton}>
+        <Text style={style.okText}>Ok</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.saleButton}>
-          <Text style={style.saleText}>Venda acabada</Text>
+        <TouchableOpacity style={style.addButton} onPress= {() =>
+            navigation.navigate('Barcode') }>
+          <Text style={style.addText}>Adicionar uotro producto</Text>
         </TouchableOpacity>
       </View>
   </View>
-}
+)}
+export default summary;

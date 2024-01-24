@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions
+View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Button
 } from 'react-native';
+import Barcode from './barcode';
 
 const style= StyleSheet.create({
   container: {
@@ -45,15 +46,17 @@ const style= StyleSheet.create({
   },
 });
 
-export default function App() {
-  return <View style={style.container}>
+function Menu({navigation}) {
+    return( 
+    <View style={style.container}>
       <View style={style.centerContainer}>
         <Text style={style.title}>Batzai</Text>
       </View>
       <Text style={style.welcome}>¡Hola !</Text>
       <Text style={style.description}>¿Que vas a hacer hoy?</Text>
       <View style={style.centerContainer}>
-        <TouchableOpacity style={style.menuButton}>
+        <TouchableOpacity style={style.menuButton} onPress= {() =>
+            navigation.navigate('Barcode') }>
             <Text style={style.menuText}>Vendas</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton}>
@@ -70,4 +73,5 @@ export default function App() {
         </TouchableOpacity>
       </View>
   </View>
-}
+)}
+export default Menu;
