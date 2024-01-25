@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions
+View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Image
 } from 'react-native';
 
 const style= StyleSheet.create({
@@ -15,10 +15,6 @@ const style= StyleSheet.create({
     alignItems: 'center',
     marginTop: 15,
   },
-  title: {
-    fontSize: 30,
-    color: 'gray',
-  },
   description: {
     fontSize: 25,
     color: 'black',
@@ -31,14 +27,17 @@ const style= StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     marginTop: 15,
-    backgroundColor: 'gray',
-    borderBottomWidth: 3,
+    backgroundColor: '#CBCBCB',
+    borderBottomWidth: 2,
+    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
   },
   tableTitle: {
     fontSize: 13,
     width: '20%',
     margin: 5,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   totalPrice: {
     fontSize: 20,
@@ -78,12 +77,12 @@ const style= StyleSheet.create({
   }
 });
 
-function summary({navigation})  {
+function Summary({navigation})  {
   return(
      <View style={style.container}>
       <View style={style.centerContainer}>
-        <Text style={style.title}>Batzai</Text>
-        <Text style={style.description}>Resume da venta</Text>
+      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
+        <Text style={style.description}>RESUMO DA VENTA</Text>
         <View style={style.table}>
           <Text style={style.tableTitle}>Decricao</Text>
           <Text style={style.tableTitle}>Quanty</Text>
@@ -92,15 +91,15 @@ function summary({navigation})  {
         </View>
         <TextInput style={style.priceInput}></TextInput>
         <Text style={style.totalPrice}>Preco total: $</Text>
-        <Text style={style.description}>¿Esta certo?</Text>
+        <Text style={style.description}>¿ESTA CERTO?</Text>
         <TouchableOpacity style={style.okButton}>
         <Text style={style.okText}>Ok</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.addButton} onPress= {() =>
-            navigation.navigate('Barcode') }>
+            navigation.navigate('barcode') }>
           <Text style={style.addText}>Adicionar uotro producto</Text>
         </TouchableOpacity>
       </View>
   </View>
 )}
-export default summary;
+export default Summary;

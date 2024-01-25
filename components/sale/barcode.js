@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions
+View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Image
 } from 'react-native';
 
 const style= StyleSheet.create({
@@ -10,14 +10,11 @@ const style= StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-  title: {
-    fontSize: 30,
-    color: 'gray',
-  },
   description: {
     fontSize: 20,
     color: 'black',
     marginTop: 20,
+    textAlign: 'center',
   },
   barcodeContainer: {
     padding: 80,
@@ -75,15 +72,15 @@ const style= StyleSheet.create({
 function Barcode({navigation}) {
   return(
   <View style={style.container}>
-      <Text style={style.title}>Batzai</Text>
-      <Text style={style.description}>Faca scan do barcoder do producto</Text>
+      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
+      <Text style={style.description}>FACA SCAN DO BARCODER DO PRODUCTO</Text>
       <View style={style.barcodeContainer}>
         <TouchableOpacity style={style.barcodeButton}>
           <Text style={style.barcodeText}>Escanear</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={style.correctButton} onPress= {() =>
-            navigation.navigate('Quanty') }>
+            navigation.navigate('quanty') }>
         <Text style={style.correctText}>Correcto</Text>
       </TouchableOpacity>
       <TouchableOpacity style={style.tenteButton}>

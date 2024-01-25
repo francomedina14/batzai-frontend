@@ -1,8 +1,7 @@
 import React from 'react';
 import {
-View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Button
+View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Image
 } from 'react-native';
-import Barcode from './barcode';
 
 const style= StyleSheet.create({
   container: {
@@ -15,10 +14,6 @@ const style= StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 15,
-  },
-  title: {
-    fontSize: 30,
-    color: 'gray',
   },
   welcome: {
     fontSize: 30,
@@ -50,16 +45,17 @@ function Menu({navigation}) {
     return( 
     <View style={style.container}>
       <View style={style.centerContainer}>
-        <Text style={style.title}>Batzai</Text>
+        <Image source={require('./assets/logo.png')} style={{margin: 20}} />
       </View>
       <Text style={style.welcome}>¡Hola !</Text>
       <Text style={style.description}>¿Que vas a hacer hoy?</Text>
       <View style={style.centerContainer}>
         <TouchableOpacity style={style.menuButton} onPress= {() =>
-            navigation.navigate('Barcode') }>
+            navigation.navigate('barcode') }>
             <Text style={style.menuText}>Vendas</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.menuButton}>
+        <TouchableOpacity style={style.menuButton} onPress= {() =>
+            navigation.navigate('client') }>
             <Text style={style.menuText}>Compras</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton}>
