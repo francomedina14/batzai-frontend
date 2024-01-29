@@ -45,7 +45,7 @@ function Menu({navigation}) {
     return( 
     <View style={style.container}>
       <View style={style.centerContainer}>
-        <Image source={require('./assets/logo.png')} style={{margin: 20}} />
+        <Image source={require('../assets/logo.png')} style={{margin: 20}} />
       </View>
       <Text style={style.welcome}>¡Hola !</Text>
       <Text style={style.description}>¿Que vas a hacer hoy?</Text>
@@ -58,7 +58,8 @@ function Menu({navigation}) {
             navigation.navigate('client') }>
             <Text style={style.menuText}>Compras</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.menuButton}>
+        <TouchableOpacity style={style.menuButton} onPress= {() =>
+            navigation.navigate('provider') }>
             <Text style={style.menuText}>Cobrar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton}>
