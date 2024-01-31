@@ -15,8 +15,16 @@ const style= StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    margin: 60,
+    marginBottom: 30,
     textAlign: 'center',
+    backgroundColor: '#ED604C',
+    color: 'white',
+    fontWeight: 'bold',
+    width: Dimensions.get('screen').width,
+    paddingTop: 200,
+    paddingBottom: 50,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40
   },
   textInput: {
     borderWidth: 1,
@@ -31,7 +39,7 @@ const style= StyleSheet.create({
     marginBottom: 10,
   },
   loginButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.3,
     justifyContent: 'center',
     alignItems: 'center',
@@ -50,7 +58,6 @@ const style= StyleSheet.create({
 function Login({navigation}) {
   return(
   <View style={style.container}>
-      <Image source={require('../assets/logo.png')} style={{margin: 20}} />
       <Text style={style.title}>¡Bem-vindo!</Text>
       <View>
         <Text style={style.label}>Usuario</Text>

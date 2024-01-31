@@ -10,20 +10,31 @@ const style= StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
+  clientContainer: {
+    backgroundColor: '#FEE45C',
+    paddingHorizontal: 60,
+    paddingVertical: 40,
+    borderRadius: 25,
+    marginVertical: 70,
+  },
+  clientText: {
+    fontSize: 20,
+    textAlign: 'center',
+
+  },
   title: {
-    fontSize: 35,
+    fontSize: 20,
     fontWeight: '500',
     textAlign: 'center',
-    marginVertical: 30,
   },
   table: {
     flexDirection: 'row',
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: 10,
     marginTop: 15,
-    backgroundColor: '#CBCBCB',
+    backgroundColor: '#FEE45C',
     borderBottomWidth: 2,
     borderTopEndRadius: 20,
     borderTopStartRadius: 20,
@@ -36,19 +47,19 @@ const style= StyleSheet.create({
     textAlign: 'center',
   },
   totalPrice: {
-    fontSize: 20,
-    borderWidth: 2,
+    fontSize: 15,
     borderRadius: 25,
-    padding: 15,
-    marginVertical: 100,
+    marginVertical: 40,
+    backgroundColor: '#FEE45C',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    color: '#464545',
   },
   okButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 40,
@@ -62,8 +73,11 @@ const style= StyleSheet.create({
 function Purchases({navigation}) {
   return(
   <View style={style.container}>
-      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
-      <Text style={style.title}>HISTORICO DE COMPRAS</Text>
+    <View style={style.clientContainer}>
+      <Text style={style.clientText}>Name e Apelido</Text>
+      <Text style={style.clientText}>########</Text>
+    </View>
+      <Text style={style.title}>Historico de compras</Text>
       <View style={style.table}>
           <Text style={style.tableTitle}>Fecha</Text>
           <Text style={style.tableTitle}>Venta</Text>
@@ -72,7 +86,7 @@ function Purchases({navigation}) {
       <Text style={style.totalPrice}>Total em divida: $</Text>
       <TouchableOpacity style={style.okButton} onPress= {() =>
             navigation.navigate('amount') }>
-          <Text style={style.okText}>Ok</Text>
+          <Text style={style.okText}>Receber</Text>
       </TouchableOpacity>
   </View>
   )}

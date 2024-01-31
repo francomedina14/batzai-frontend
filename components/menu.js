@@ -17,26 +17,25 @@ const style= StyleSheet.create({
   },
   welcome: {
     fontSize: 30,
-    color: 'gray',
+    color: '#ED604C',
     marginTop: 20,
   },
   description: {
     fontSize: 20,
-    color: 'gray',
+    color: '#464545',
     marginTop: 10,
   },
   menuButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width * 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
     borderRadius: 25,
-    borderWidth: 1,
     marginBottom: 25,
   },
   menuText: {
-    color: 'black',
+    color: 'white',
     fontSize: 20,
   },
 });
@@ -44,10 +43,7 @@ const style= StyleSheet.create({
 function Menu({navigation}) {
     return( 
     <View style={style.container}>
-      <View style={style.centerContainer}>
-        <Image source={require('../assets/logo.png')} style={{margin: 20}} />
-      </View>
-      <Text style={style.welcome}>¡Hola !</Text>
+      <Text style={style.welcome}>¡Ola !</Text>
       <Text style={style.description}>¿Que vas a hacer hoy?</Text>
       <View style={style.centerContainer}>
         <TouchableOpacity style={style.menuButton} onPress= {() =>
@@ -66,7 +62,7 @@ function Menu({navigation}) {
             <Text style={style.menuText}>Promocoes</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton}>
-            <Text style={style.menuText}>Contas</Text>
+            <Text style={style.menuText}>Relatorios</Text>
         </TouchableOpacity>
       </View>
   </View>

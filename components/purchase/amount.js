@@ -11,38 +11,37 @@ const style= StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: '400',
     textAlign: 'center',
-    marginVertical: 30,
+    marginBottom: 20,
+    marginTop: 100,
+    color: '#464545',
   },
   textInput: {
-    borderWidth: 1,
-    width: Dimensions.get('screen').width * 0.7,
-    borderColor: 'gray',
+    borderWidth: 2,
+    width: Dimensions.get('screen').width * 0.4,
+    borderColor: '#FEE45C',
+    color: '#ED604C',
     marginBottom: 50,
-    padding: 35,
+    padding: 10,
     textAlign: 'center',
-    fontSize: 35,
-    margin: 15,
+    fontSize: 20,
   },
   totalPrice: {
-    fontSize: 20,
-    borderWidth: 2,
+    fontSize: 15,
     borderRadius: 25,
-    padding: 15,
-    marginTop: 40,
-    textAlign: 'center',
-    lineHeight: 40,
-    width: Dimensions.get('screen').width * 0.7
+    marginVertical: 40,
+    backgroundColor: '#FEE45C',
+    paddingVertical: 10,
+    paddingHorizontal: 50,
+    color: '#464545',
   },
   okButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 30,
@@ -56,11 +55,10 @@ const style= StyleSheet.create({
 function Amount({navigation}) {
   return(
   <View style={style.container}>
-      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
-      <Text style={style.title}>ESCREBA VALOR A PAGAR</Text>
+      <Text style={style.title}>Escreba valor a pagar</Text>
       <TextInput style={style.textInput}/>
       <Text style={style.totalPrice}>
-        DIVIDAS A PAGAR {"\n"} $
+        Divida restante $
       </Text>
       <TouchableOpacity style={style.okButton} onPress= {() =>
             navigation.navigate('confirm') }>

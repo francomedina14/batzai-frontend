@@ -13,6 +13,19 @@ const style= StyleSheet.create({
   image: {
     margin: 100,
   },
+  title: {
+    fontSize: 30,
+    marginBottom: 30,
+    textAlign: 'center',
+    backgroundColor: '#ED604C',
+    color: 'white',
+    fontWeight: 'bold',
+    width: Dimensions.get('screen').width,
+    paddingTop: 200,
+    paddingBottom: 50,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40
+  },
   textInput: {
     borderWidth: 1,
     width: Dimensions.get('screen').width * 0.7,
@@ -26,12 +39,10 @@ const style= StyleSheet.create({
     marginBottom: 10,
   },
   okButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 40,
@@ -45,8 +56,7 @@ const style= StyleSheet.create({
 function Client({navigation}) {
   return(
   <View style={style.container}>
-      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
-      <Image source={require('../../assets/logo.png')} style={style.image}/>
+      <Text style={style.title}>¡Bem-vindo!</Text>
       <View>
         <Text style={style.label}>Codigo de cliente</Text>
         <TextInput style={style.textInput}/>
@@ -55,7 +65,7 @@ function Client({navigation}) {
       </View>
       <TouchableOpacity style={style.okButton} onPress= {() =>
             navigation.navigate('purchases') }>
-          <Text style={style.okText}>Ok</Text>
+          <Text style={style.okText}>Aceder</Text>
       </TouchableOpacity>
   </View>
   )}

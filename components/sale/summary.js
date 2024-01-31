@@ -17,7 +17,7 @@ const style= StyleSheet.create({
   },
   description: {
     fontSize: 25,
-    color: 'black',
+    color: '#464545',
     marginTop: 20,
   },
   table: {
@@ -27,10 +27,11 @@ const style= StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     marginTop: 15,
-    backgroundColor: '#CBCBCB',
+    backgroundColor: '#FEE45C',
     borderBottomWidth: 2,
     borderTopEndRadius: 20,
     borderTopStartRadius: 20,
+    color: '#464545',
   },
   tableTitle: {
     fontSize: 13,
@@ -41,14 +42,16 @@ const style= StyleSheet.create({
   },
   totalPrice: {
     fontSize: 20,
-    borderWidth: 2,
     borderRadius: 25,
-    padding: 15,
+    paddingVertical: 15,
+    paddingHorizontal: 45,
     marginTop: 100,
     marginBottom: 70,
+    backgroundColor: '#FEE45C',
+    color: '#464545',
   },
   okButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
@@ -65,14 +68,14 @@ const style= StyleSheet.create({
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
+    borderColor: '#ED604C',
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
   },
   addText: {
-    color: 'gray',
+    color: '#ED604C',
     fontSize: 20,
   }
 });
@@ -81,7 +84,6 @@ function Summary({navigation})  {
   return(
      <View style={style.container}>
       <View style={style.centerContainer}>
-      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
         <Text style={style.description}>RESUMO DA VENTA</Text>
         <View style={style.table}>
           <Text style={style.tableTitle}>Decricao</Text>
@@ -90,7 +92,7 @@ function Summary({navigation})  {
           <Text style={style.tableTitle}>Total</Text>
         </View>
         <TextInput style={style.priceInput}></TextInput>
-        <Text style={style.totalPrice}>Preco total: $</Text>
+        <Text style={style.totalPrice}>Total: $</Text>
         <Text style={style.description}>¿ESTA CERTO?</Text>
         <TouchableOpacity style={style.okButton}>
         <Text style={style.okText}>Ok</Text>

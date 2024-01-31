@@ -12,18 +12,18 @@ const style= StyleSheet.create({
   },
   description: {
     fontSize: 20,
-    color: 'black',
-    marginTop: 20,
+    color: '#464545',
+    marginVertical: 40,
     textAlign: 'center',
   },
   barcodeContainer: {
     padding: 80,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#ED604C',
     margin: 20
   },  
   barcodeButton: {
-    backgroundColor: 'black',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width * 0.5,
     justifyContent: 'center',
     alignItems: 'center',
@@ -40,7 +40,7 @@ const style= StyleSheet.create({
     flexDirection: 'row',
   },
   correctButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,14 +57,14 @@ const style= StyleSheet.create({
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
+    borderColor: '#ED604C',
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
   },
   tenteText: {
-    color: 'gray',
+    color: '#ED604C',
     fontSize: 20,
   }
 });
@@ -72,7 +72,6 @@ const style= StyleSheet.create({
 function Barcode({navigation}) {
   return(
   <View style={style.container}>
-      <Image source={require('../../assets/logo.png')} style={{margin: 20}} />
       <Text style={style.description}>FACA SCAN DO BARCODER DO PRODUCTO</Text>
       <View style={style.barcodeContainer}>
         <TouchableOpacity style={style.barcodeButton}>
@@ -80,11 +79,11 @@ function Barcode({navigation}) {
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={style.correctButton} onPress= {() =>
-            navigation.navigate('quanty') }>
-        <Text style={style.correctText}>Correcto</Text>
+            navigation.navigate('summary') }>
+        <Text style={style.correctText}>Guardar e continuar</Text>
       </TouchableOpacity>
       <TouchableOpacity style={style.tenteButton}>
-        <Text style={style.tenteText}>Tente uotra vez</Text>
+        <Text style={style.tenteText}>Venda acabada</Text>
       </TouchableOpacity>
   </View>
   )}
