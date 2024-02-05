@@ -44,18 +44,18 @@ function Menu({navigation}) {
     return( 
     <View style={style.container}>
       <Text style={style.welcome}>¡Ola !</Text>
-      <Text style={style.description}>¿Que vas a hacer hoy?</Text>
+      <Text style={style.description}>¿Que quer fazer?</Text>
       <View style={style.centerContainer}>
         <TouchableOpacity style={style.menuButton} onPress= {() =>
             navigation.navigate('barcode') }>
             <Text style={style.menuText}>Vendas</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton} onPress= {() =>
-            navigation.navigate('client') }>
+            navigation.navigate('provider') }>
             <Text style={style.menuText}>Compras</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton} onPress= {() =>
-            navigation.navigate('provider') }>
+            navigation.navigate('client') }>
             <Text style={style.menuText}>Cobrar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.menuButton}>

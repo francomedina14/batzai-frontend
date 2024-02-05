@@ -43,8 +43,6 @@ const style= StyleSheet.create({
     width: Dimensions.get('screen').width *0.3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 40,

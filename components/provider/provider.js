@@ -10,8 +10,18 @@ const style= StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-  image: {
-    margin: 100,
+  title: {
+    fontSize: 30,
+    marginBottom: 30,
+    textAlign: 'center',
+    backgroundColor: '#ED604C',
+    color: 'white',
+    fontWeight: 'bold',
+    width: Dimensions.get('screen').width,
+    paddingTop: 200,
+    paddingBottom: 50,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40
   },
   inputContainer: {
     margin: 40,
@@ -29,12 +39,10 @@ const style= StyleSheet.create({
     marginBottom: 10,
   },
   okButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#ED604C',
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 40,
@@ -48,14 +56,14 @@ const style= StyleSheet.create({
     width: Dimensions.get('screen').width *0.7,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
+    borderColor: '#ED604C',
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
   },
   newText: {
-    color: 'black',
+    color: '#ED604C',
     fontSize: 20,
   }
 });
@@ -63,13 +71,12 @@ const style= StyleSheet.create({
 function Provider({navigation}) {
   return(
   <View style={style.container}>
-      <Image source={require('../../assets/logo.png')} style={style.image}/>
+      <Text style={style.title}>¡Ben-vindo!</Text>
       <View style={style.inputContainer}>
         <Text style={style.label}>Proveedor</Text>
         <TextInput style={style.textInput}/>
       </View>
-      <TouchableOpacity style={style.okButton} onPress= {() =>
-            navigation.navigate('purchases') }>
+      <TouchableOpacity style={style.okButton} >
           <Text style={style.okText}>Aceder</Text>
       </TouchableOpacity>
       <TouchableOpacity style={style.newButton} onPress= {() =>

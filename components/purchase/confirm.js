@@ -64,7 +64,7 @@ function Confirm({navigation}) {
         Valor recebido: $
       </Text>
       <TouchableOpacity style={style.finishButton} onPress= {() =>
-            navigation.navigate('confirm') }>
+            navigation.navigate('purchaseQr') }>
           <Text style={style.finishText}>Finalizar</Text>
       </TouchableOpacity>
   </View>

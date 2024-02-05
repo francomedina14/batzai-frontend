@@ -47,24 +47,28 @@ const style= StyleSheet.create({
   }
 });
 
-function NewProvider({navigation}) {
+function NewClient({navigation}) {
   return(
   <View style={style.container}>
-      <Text style={style.title}>Nuevo proveedor</Text>
+      <Text style={style.title}>Adicionar Cliente</Text>
       <View>
-        <Text style={style.label}>ESCREVA NOMBRE DO *</Text>
+        <Text style={style.label}>ESCREVA O NOME DO NEGOCIO</Text>
         <TextInput style={style.textInput}/>
-        <Text style={style.label}>ESCREVA TELEFONO DO FORNECEDOR *</Text>
+        <Text style={style.label}>ESCREVA O NOME DO MERCEARIA *</Text>
         <TextInput style={style.textInput}/>
-        <Text style={style.label}>ESCREVA NUIT DO FORNECEDOR</Text>
+        <Text style={style.label}>ESCREVA O TELEFONE DO CLIENTE *</Text>
         <TextInput style={style.textInput}/>
-        <Text style={style.label}>ESCREVA MORADA DO FORNECEDOR</Text>
+        <Text style={style.label}>ESCREVA UM TELEFONE ALTERNATIVO</Text>
+        <TextInput style={style.textInput}/>
+        <Text style={style.label}>ESCREVA A LOCALIZACAO DO CLIENTE *</Text>
+        <TextInput style={style.textInput}/>
+        <Text style={style.label}>ESCREVA O NUIT DO CLIENTE</Text>
         <TextInput style={style.textInput}/>
       </View>
       <TouchableOpacity style={style.okButton} onPress= {() =>
-            navigation.navigate('provider') }>
+            navigation.navigate('menu') }>
           <Text style={style.okText}>Ok</Text>
       </TouchableOpacity>
   </View>
   )}
-export default NewProvider;
+export default NewClient;
