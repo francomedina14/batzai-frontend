@@ -14,11 +14,16 @@ const style= StyleSheet.create({
     margin: 100,
   },
   title: {
-    fontSize: 25,
-    fontWeight: 'bold',
+    fontSize: 20,
+    marginBottom: 30,
     textAlign: 'center',
-    color: '#ED604C',
-    marginVertical: 40,
+    backgroundColor: '#ED604C',
+    color: 'white',
+    width: Dimensions.get('screen').width,
+    paddingTop: 200,
+    paddingBottom: 50,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40
   },
   textInput: {
     borderWidth: 1,
