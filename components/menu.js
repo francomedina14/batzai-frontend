@@ -17,7 +17,7 @@ const style= StyleSheet.create({
   },
   welcome: {
     fontSize: 30,
-    color: '#ED604C',
+    color: '#EC4D16',
     marginTop: 20,
   },
   description: {
@@ -26,7 +26,7 @@ const style= StyleSheet.create({
     marginTop: 10,
   },
   menuButton: {
-    backgroundColor: '#ED604C',
+    backgroundColor: '#EC4D16',
     width: Dimensions.get('screen').width * 0.8,
     justifyContent: 'center',
     alignItems: 'center',

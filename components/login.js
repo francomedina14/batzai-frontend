@@ -17,7 +17,7 @@ const style= StyleSheet.create({
     fontSize: 30,
     marginBottom: 30,
     textAlign: 'center',
-    backgroundColor: '#ED604C',
+    backgroundColor: '#EC4D16',
     color: 'white',
     fontWeight: 'bold',
     width: Dimensions.get('screen').width,
@@ -39,7 +39,7 @@ const style= StyleSheet.create({
     marginBottom: 10,
   },
   loginButton: {
-    backgroundColor: '#ED604C',
+    backgroundColor: '#EC4D16',
     width: Dimensions.get('screen').width *0.3,
     justifyContent: 'center',
     alignItems: 'center',
