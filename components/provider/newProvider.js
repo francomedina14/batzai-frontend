@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { post } from 'axios';
+import axios from 'axios';
 import {
 View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Image
 } from 'react-native';
@@ -53,7 +53,7 @@ const style= StyleSheet.create({
   }
 });
 
-const URL = 'localhost:8000/api/v1/proveedores';
+const providerURL = 'ec2-3-84-116-82.compute-1.amazonaws.com:8000/api/v1/proveedores';
 
 const NewProvider = () => {
 
@@ -65,12 +65,18 @@ const NewProvider = () => {
     
     const addProvider = async() => {
     
-      const obj = new FormData()
-      obj.append("name", name)
-      obj.append("phone", phone)
-      obj.append("nuit", nuit)
-      obj.append("address", address)
-      const { data } = await post(URL ,obj)
+      axios.post(providerURL, {
+        name: name,
+        phone: phone,
+        nuit: nuit,
+        address: address,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
       clearInput()
     }
 
