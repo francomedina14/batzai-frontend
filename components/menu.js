@@ -43,7 +43,7 @@ const style= StyleSheet.create({
 function Menu({navigation}) {
     return( 
     <View style={style.container}>
-      <Text style={style.welcome}>¡Ola !</Text>
+      <Text style={style.welcome}>¡Ola Admin!</Text>
       <Text style={style.description}>¿Que quer fazer?</Text>
       <View style={style.centerContainer}>
         <TouchableOpacity style={style.menuButton} onPress= {() =>

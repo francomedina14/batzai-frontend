@@ -76,7 +76,8 @@ function Provider({navigation}) {
         <Text style={style.label}>Proveedor</Text>
         <TextInput style={style.textInput}/>
       </View>
-      <TouchableOpacity style={style.okButton} >
+      <TouchableOpacity style={style.okButton} onPress= {() =>
+            navigation.navigate('purchases') }>
           <Text style={style.okText}>Aceder</Text>
       </TouchableOpacity>
       <TouchableOpacity style={style.newButton} onPress= {() =>

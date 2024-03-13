@@ -62,7 +62,6 @@ const NewProvider = () => {
     const [nuit, setNuit] = useState('')
     const [address, setAddress] = useState('')
     
-    
     const addProvider = async() => {
     
       axios.post(providerURL, {

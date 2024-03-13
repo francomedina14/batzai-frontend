@@ -74,9 +74,9 @@ function Barcode({navigation}) {
   <View style={style.container}>
       <Text style={style.description}>FACA SCAN DO BARCODER DO PRODUCTO</Text>
       <View style={style.barcodeContainer}>
-        <TouchableOpacity style={style.barcodeButton}>
+        <Camera style={style.barcodeButton}>
           <Text style={style.barcodeText}>Escanear</Text>
-        </TouchableOpacity>
+        </Camera>
       </View>
       <TouchableOpacity style={style.correctButton} onPress= {() =>
             navigation.navigate('summary') }>

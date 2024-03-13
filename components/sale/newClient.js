@@ -47,23 +47,57 @@ const style= StyleSheet.create({
   }
 });
 
+const clientURL = 'ec2-3-84-116-82.compute-1.amazonaws.com:8000/api/v1/clientes';
+
+const NewClient = () => {
+
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [phone, setPhone2] = useState('')
+    const [address, setAddress] = useState('')
+    const [nuit, setNuit] = useState('')
+    
+    const addClient = async() => {
+    
+      axios.post(clientURL, {
+        name: name,
+        phone: phone,
+        phone2: phone2,
+        address: address,
+        nuit: nuit,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      clearInput()
+    }
+
+    const clearInput = () => {
+        setName('')
+        setPhone('')
+        setPhone2('')
+        setAddress('')
+        setNuit('')
+    }
+
 function NewClient({navigation}) {
   return(
   <View style={style.container}>
       <Text style={style.title}>Adicionar Cliente</Text>
       <View>
         <Text style={style.label}>ESCREVA O NOME DO NEGOCIO</Text>
-        <TextInput style={style.textInput}/>
-        <Text style={style.label}>ESCREVA O NOME DO MERCEARIA *</Text>
-        <TextInput style={style.textInput}/>
+        <TextInput style={style.textInput} onChangeText={setName} value={name}/>
         <Text style={style.label}>ESCREVA O TELEFONE DO CLIENTE *</Text>
-        <TextInput style={style.textInput}/>
+        <TextInput style={style.textInput} onChangeText={setPhone} value={phone}/>
         <Text style={style.label}>ESCREVA UM TELEFONE ALTERNATIVO</Text>
-        <TextInput style={style.textInput}/>
+        <TextInput style={style.textInput} onChangeText={setPhone2} value={phone2}/>
         <Text style={style.label}>ESCREVA A LOCALIZACAO DO CLIENTE *</Text>
-        <TextInput style={style.textInput}/>
+        <TextInput style={style.textInput} onChangeText={setAddress} value={address}/>
         <Text style={style.label}>ESCREVA O NUIT DO CLIENTE</Text>
-        <TextInput style={style.textInput}/>
+        <TextInput style={style.textInput} onChangeText={setNuit} value={nuit}/>
       </View>
       <TouchableOpacity style={style.okButton} onPress= {() =>
             navigation.navigate('menu') }>
